@@ -57,14 +57,14 @@ docker {
         val propertiesFile = rootProject.file("gradle-docker.properties")
         if (propertiesFile.exists())
             load(propertiesFile.inputStream())
-        this.putAll(System.getenv())
+        this.putAll(System.getProperties())
     }
     val dockerRegistryUrl = dockerProperties.getProperty("docker.registry.url")
     val dockerRegistryUsername = dockerProperties.getProperty("docker.registry.username")
     val dockerRegistryPassword = dockerProperties.getProperty("docker.registry.password")
     val dockerImageName = dockerProperties.getProperty("docker.image.name.backend")
 
-    println(System.getenv().keys)
+    println(System.getProperties().keys)
     println(dockerImageName)
 
     dockerProperties.getProperty("docker.remote.api.address")?.let { url.set(it) }
