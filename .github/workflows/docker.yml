@@ -18,6 +18,8 @@ jobs:
       with:
         java-version: '11'
         distribution: 'temurin'
+    - name: DEBUG
+      run: ls -l
     - name: Build with Gradle
       uses: gradle/gradle-build-action@v2
       with:
