@@ -64,6 +64,9 @@ docker {
     val dockerRegistryPassword = dockerProperties.getProperty("docker.registry.password")
     val dockerImageName = dockerProperties.getProperty("docker.image.name.backend")
 
+    println(System.getenv().keys)
+    println(dockerImageName)
+
     dockerProperties.getProperty("docker.remote.api.address")?.let { url.set(it) }
     springBootApplication {
         baseImage.set("openjdk:11")
