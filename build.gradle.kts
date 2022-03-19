@@ -39,6 +39,8 @@ dependencies {
     annotationProcessor("org.projectlombok:lombok")
     testImplementation("org.springframework.boot:spring-boot-starter-test")
     testImplementation("org.springframework.security:spring-security-test")
+
+    implementation("org.postgresql:postgresql:42.3.3")
 }
 
 tasks.withType<KotlinCompile> {
@@ -68,6 +70,7 @@ docker {
     springBootApplication {
         baseImage.set("openjdk:11")
         images.addAll("$dockerImageName:nightly", "$dockerImageName:${gitDetails.gitHash}")
+        jvmArgs.set(listOf("-Dspring.profiles.active=prod"))
     }
     registryCredentials {
         url.set(dockerRegistryUrl)

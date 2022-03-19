@@ -1,1 +1,14 @@
+spring:
+  profiles:
+    active: dev
 
+# 不建议在这里填写数据库JDBC URL和用户名密码：
+# 1. 出于安全考虑。
+# 2. 每个人的数据库连接不一定一样，所以在此填写总会被改动，不利于git协作。
+# 建议的做法是从application-dev.example.yml创建一个文件application-dev.yml，在该文件中进行设置。
+#spring:
+#  datasource:
+#    url:
+#    username:
+#    password:
+#    driver-class-name:
