@@ -20,7 +20,7 @@ jobs:
         distribution: 'temurin'
     - name: Build with Gradle
       uses: gradle/gradle-build-action@v2
-    - name: Build abd push Docker image
+    - name: Build and push Docker image
       env:
         DOCKER_REGISTRY_URL: ${{  secrets.DOCKER_REGISTRY_URL  }}
         DOCKER_REGISTRY_USERNAME: ${{  secrets.DOCKER_REGISTRY_USERNAME  }}
