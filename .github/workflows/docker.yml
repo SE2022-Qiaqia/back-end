@@ -21,10 +21,10 @@ jobs:
     - name: Build with Gradle
       uses: gradle/gradle-build-action@v2
     - name: Build and push Docker image
-      env:
-        "docker.registry.url": ${{  secrets.DOCKER_REGISTRY_URL  }}
-        "docker.registry.username": ${{  secrets.DOCKER_REGISTRY_USERNAME  }}
-        "docker.registry.password": ${{  secrets.DOCKER_REGISTRY_PASSWORD  }}
-        "docker.image.name.backend": ${{  secrets.DOCKER_IMAGE_NAME_BACKEND  }}
-      run: ./gradlew :dockerPushImage
+#      env:
+#        "docker.registry.url": ${{  secrets.DOCKER_REGISTRY_URL  }}
+#        "docker.registry.username": ${{  secrets.DOCKER_REGISTRY_USERNAME  }}
+#        "docker.registry.password": ${{  secrets.DOCKER_REGISTRY_PASSWORD  }}
+#        "docker.image.name.backend": ${{  secrets.DOCKER_IMAGE_NAME_BACKEND  }}
+      run: ./gradlew :dockerPushImage -Ddocker.registry.url=${{  secrets.DOCKER_REGISTRY_URL  }} -Ddocker.registry.username=${{  secrets.DOCKER_REGISTRY_USERNAME  }} -Ddocker.registry.password=${{  secrets.DOCKER_REGISTRY_PASSWORD  }} -Ddocker.image.name.backend=${{  secrets.DOCKER_IMAGE_NAME_BACKEND  }}
       
