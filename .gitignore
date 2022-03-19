@@ -1,3 +1,5 @@
+gradle-docker.properties
+
 HELP.md
 .gradle
 build/
