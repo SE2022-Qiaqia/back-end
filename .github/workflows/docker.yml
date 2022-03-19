@@ -18,8 +18,8 @@ jobs:
       with:
         java-version: '11'
         distribution: 'temurin'
-    - name: DEBUG
-      run: pwd && ls -l
+    - name: Chmod for gradlew
+      run: chmod +x ./gradlew
     - name: Build with Gradle
       uses: gradle/gradle-build-action@v2
       with:
