@@ -9,6 +9,7 @@ import lombok.Data;
 public class CourseSpecific {
     private Long id;
     private Long courseCommonId;
+    private CourseCommon courseCommon;
     private Long teacherId;
     private String location;
     private int quota;

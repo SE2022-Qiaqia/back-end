@@ -1,4 +1,4 @@
-package com.whu.se2022.qiaqia.coursesystem.controller;
+package com.whu.se2022.qiaqia.coursesystem.dto.response;
 
 import lombok.Data;
 

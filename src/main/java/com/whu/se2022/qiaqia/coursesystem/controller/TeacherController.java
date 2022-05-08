@@ -1,9 +1,28 @@
 package com.whu.se2022.qiaqia.coursesystem.controller;
 
-import org.springframework.web.bind.annotation.RestController;
+import com.whu.se2022.qiaqia.coursesystem.dto.response.None;
+import com.whu.se2022.qiaqia.coursesystem.dto.response.Response;
+import com.whu.se2022.qiaqia.coursesystem.entity.CourseSpecific;
+import org.springframework.web.bind.annotation.*;
+
+import java.util.List;
 
 @RestController
-public class TeacherController
-{
+@RequestMapping("/teacher")
+public class TeacherController {
+
+    @GetMapping("/course/{semesterId}")
+    public Response<List<CourseSpecific>> getCoursesForTeacher(@PathVariable("semesterId") Long semesterId) {
+        // TODO
+        return null;
+    }
+
+    @PostMapping("/course/{courseId}/{studentId}")
+    public Response<None> updateScores(@PathVariable("courseId") String courseId,
+                                       @PathVariable("studentId") String studentId,
+                                       @RequestParam("scores") float scores) {
+        // TODO
+        return null;
+    }
 
 }

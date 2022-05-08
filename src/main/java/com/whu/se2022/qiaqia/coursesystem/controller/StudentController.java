@@ -1,46 +1,34 @@
 package com.whu.se2022.qiaqia.coursesystem.controller;
 
-import com.whu.se2022.qiaqia.coursesystem.entity.CourseCommon;
+import com.whu.se2022.qiaqia.coursesystem.dto.response.None;
+import com.whu.se2022.qiaqia.coursesystem.dto.response.Response;
 import com.whu.se2022.qiaqia.coursesystem.entity.CourseSpecific;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.security.access.prepost.PreAuthorize;
+import org.springframework.web.bind.annotation.*;
+
 import java.util.List;
 
-
 @RestController
-public class StudentController
-{
-    public Response<None> takeCourse()
-    {
+@RequestMapping("/student")
+@PreAuthorize("hasRole('student')")
+public class StudentController {
 
+    @PostMapping("/course/{id}")
+    public Response<None> takeCourse(@PathVariable("id") String id) {
+        // TODO
         return null;
     }
 
-    public Response<None> dropCourse()
-    {
-
+    @DeleteMapping("/course/{id}")
+    public Response<None> dropCourse(@PathVariable("id") String id) {
+        // TODO
         return null;
     }
 
-    public Response<List<CourseSpecific>> queryCourse(){
-
+    @GetMapping("/course")
+    public Response<None> getSelectedCourse(@RequestBody List<Long> semestersId) {
+        // TODO
         return null;
     }
 
-    public Response<None> getSelectCourse()
-    {
-
-        return null;
-    }
-
-    public Response<None> getGrade()
-    {
-
-        return null;
-    }
-
-    public Response<None> getAllGrade()
-    {
-
-        return null;
-    }
 }
