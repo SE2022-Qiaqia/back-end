@@ -12,6 +12,6 @@ public interface UserMapper {
     @Select("select * from user where user_id = #{id}")
     public User getUserById(@Param("id") Long id);
 
-    @Select("select * from user where name = #{name}")
-    public User getUserByName(@Param("name") String name);
+    @Select("select * from user where `name` = #{username}")
+    public User getUserByName(@Param("username") String username);
 }

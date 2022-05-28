@@ -41,7 +41,7 @@ dependencies {
     implementation("org.springframework.boot:spring-boot-starter-data-jdbc")
     implementation("com.auth0:java-jwt:3.19.1")
     implementation("com.networknt:exception:2.1.1")
-    implementation("com.alibaba:fastjson:2.0.2.graal")
+    implementation("com.alibaba:fastjson:1.2.79")
     compileOnly("org.projectlombok:lombok")
     annotationProcessor("org.projectlombok:lombok")
     testImplementation("org.springframework.boot:spring-boot-starter-test")

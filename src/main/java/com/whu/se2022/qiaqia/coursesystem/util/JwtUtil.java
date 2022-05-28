@@ -61,7 +61,7 @@ public class JwtUtil {
                     .verify(token.replace(tokenPrefix, ""))
                     .getClaim("id").asLong();
         } catch (Exception e){
-            //TODO
+
             return 0L;
         }
     }
