@@ -17,4 +17,5 @@ public class User {
     private Date rollDate;
     private String password;
     private Integer instituteId;
+    private String instituteName;
 }
