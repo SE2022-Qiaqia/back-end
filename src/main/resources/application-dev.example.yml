@@ -1,6 +1,0 @@
-spring:
-  datasource:
-    url: jdbc:postgresql://localhost:5432/db_name?useUnicode=true&characterEncoding=utf-8&useUnicode=true&characterEncoding=UTC+8
-    username: db_user
-    password: db_password
-    driver-class-name: org.postgresql.Driver

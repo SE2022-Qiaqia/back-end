@@ -2,6 +2,16 @@ spring:
   profiles:
     active: dev
 
+
+
+jwt:
+  header: "Authorization" #token返回头部
+  tokenPrefix: "Bearer " #token前缀
+  secret: "qiaqiabkj" #密钥
+  expireTime: 200000 #有效时间
+
+
+
 # 不建议在这里填写数据库JDBC URL和用户名密码：
 # 1. 出于安全考虑。
 # 2. 每个人的数据库连接不一定一样，所以在此填写总会被改动，不利于git协作。
