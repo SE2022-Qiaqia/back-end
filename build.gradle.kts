@@ -51,7 +51,7 @@ dependencies {
     testImplementation("org.springframework.security:spring-security-test")
 
     implementation("org.mybatis.spring.boot:mybatis-spring-boot-starter:2.2.2")
-
+    implementation("io.springfox:springfox-boot-starter:3.0.0")
     implementation("org.postgresql:postgresql:42.3.3")
 }
 

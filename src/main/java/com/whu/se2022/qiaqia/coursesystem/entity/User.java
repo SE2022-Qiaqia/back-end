@@ -1,21 +1,23 @@
 package com.whu.se2022.qiaqia.coursesystem.entity;
 
-
 import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;
-
-import java.sql.Date;
 
 @Data
 @NoArgsConstructor
 @AllArgsConstructor
 public class User {
     private Long userId;
-    private String name;
-    private Integer role;
-    private Date rollDate;
+    private String username;
+    private String realname;
     private String password;
-    private Integer instituteId;
-    private String instituteName;
+    // 0    学生
+    // 100  教师
+    // 200  管理员
+    private int role;
+    private Long collegeId;
+    private int entranceYear;
+    private String createdAt;
+    private String updatedAt;
 }

@@ -1,11 +1,11 @@
 package com.whu.se2022.qiaqia.coursesystem.controller;
 
 import com.alibaba.fastjson.JSONObject;
+import com.whu.se2022.qiaqia.coursesystem.dto.response.ResponseRes;
 import com.whu.se2022.qiaqia.coursesystem.entity.Course;
 import com.whu.se2022.qiaqia.coursesystem.entity.CourseHead;
 import com.whu.se2022.qiaqia.coursesystem.entity.User;
 import com.whu.se2022.qiaqia.coursesystem.service.CourseService;
-import com.whu.se2022.qiaqia.coursesystem.util.ResponseRes;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;

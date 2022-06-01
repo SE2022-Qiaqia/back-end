@@ -3,8 +3,9 @@ package com.whu.se2022.qiaqia.coursesystem.service;
 import com.whu.se2022.qiaqia.coursesystem.entity.Course;
 import com.whu.se2022.qiaqia.coursesystem.entity.CourseHead;
 import com.whu.se2022.qiaqia.coursesystem.entity.User;
+import com.whu.se2022.qiaqia.coursesystem.mapper.CollegeMapper;
 import com.whu.se2022.qiaqia.coursesystem.mapper.CourseMapper;
-import com.whu.se2022.qiaqia.coursesystem.mapper.InstituteMapper;
+import com.whu.se2022.qiaqia.coursesystem.mapper.CollegeMapper;
 import com.whu.se2022.qiaqia.coursesystem.mapper.UserMapper;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -20,11 +21,8 @@ public class CourseService {
     CourseMapper courseMapper;
 
     @Autowired
-    InstituteMapper instituteMapper;
+    CollegeMapper collegeMapper;
 
-
-    @Autowired
-    UserMapper userMapper;
 
 
     public Course getCourseById(Long id){return courseMapper.getCourseById(id);}
@@ -47,7 +45,7 @@ public class CourseService {
                                 Integer courseHour, Long instituteId,
                                 Long courseId) throws Exception{
         try {
-            instituteMapper.getInstituteById(instituteId);
+            collegeMapper.getCollegeById(instituteId);
         }catch (Exception e){
             throw new Exception("机构ID不存在");
         }
@@ -57,7 +55,7 @@ public class CourseService {
     public boolean insertCourse(String courseName, Integer credit,
                                 Integer courseHour, Long instituteId)throws Exception{
         try {
-            instituteMapper.getInstituteById(instituteId);
+            collegeMapper.getCollegeById(instituteId);
         }catch (Exception e){
             throw new Exception("机构ID不存在");
         }

@@ -1,4 +1,4 @@
-package com.whu.se2022.qiaqia.coursesystem.dto.request.admin;
+package com.whu.se2022.qiaqia.coursesystem.dto.request.user;
 
 import lombok.Data;
 

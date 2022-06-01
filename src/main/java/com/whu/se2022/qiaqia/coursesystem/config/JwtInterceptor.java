@@ -16,15 +16,15 @@ public class JwtInterceptor implements HandlerInterceptor {
     @Override
     public boolean preHandle(HttpServletRequest request, HttpServletResponse response, Object handler) throws Exception {
         //http的header中获得token
-        String token = request.getHeader("token");
+        String token = request.getHeader("authorization");
         //token不存在
         if (token == null || token.equals("")) throw new RuntimeException("用户未登录");
         //验证token
         Long id = JwtUtil.validateToken(token);
         if (id == null || id==0L)
             throw new RuntimeException("token无效");
-
-
+        // 解析id
+        request.getServletContext().setAttribute("user_id",id);
         //更新token有效时间 (如果需要更新其实就是产生一个新的token)
         if (JwtUtil.isNeedUpdate(token)){
             String newToken = JwtUtil.createToken(id);

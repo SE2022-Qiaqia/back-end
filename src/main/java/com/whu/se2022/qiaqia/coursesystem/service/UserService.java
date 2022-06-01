@@ -6,36 +6,69 @@ import com.whu.se2022.qiaqia.coursesystem.mapper.UserMapper;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
-import javax.xml.crypto.Data;
-import java.text.SimpleDateFormat;
-import java.util.Date;
-
 @Service
 public class UserService {
     @Autowired
     UserMapper userMapper;
 
-
-    public User getUserById(Long id){
-        return userMapper.getUserById(id);
+    public User getUserInfoById(Long user_id) {
+        return userMapper.getUserById(user_id);
     }
 
-    public User getUserByName(String name) throws Exception{
+    public boolean deleteUserById(Long user_id) throws Exception {
         try {
-            return userMapper.getUserByName(name);
-        }
-        catch (Exception e){
-            throw  e;
+            return userMapper.deleteUser(user_id);
+        } catch (Exception e) {
+            throw new Exception(e.getMessage());
         }
     }
-    public Boolean inserUser(String username,String psw,Integer role,Integer instituteId) throws  Exception{
+
+    public boolean addUser(User user) throws Exception {
         try {
-            Date dNow = new Date();
-            SimpleDateFormat ft = new SimpleDateFormat("yyyy-MM-dd");
-            userMapper.insertUser(username,role,ft.format(dNow),psw,instituteId);
-            return true;
-        }catch (Exception e){
-            throw e;
+            return userMapper.addUser(
+                    user.getUserId(),
+                    user.getUsername(),
+                    user.getRealname(),
+                    user.getPassword(),
+                    user.getRole(),
+                    user.getEntranceYear(),
+                    user.getCollegeId(),
+                    user.getCreatedAt(),
+                    user.getUpdatedAt()
+            );
+        } catch (Exception e) {
+            throw new Exception(e.getMessage());
         }
     }
+
+    public boolean updateUser(User user) throws Exception {
+        try {
+            return userMapper.updateUser(
+                    user.getUserId(),
+                    user.getUsername(),
+                    user.getRealname(),
+                    user.getRole(),
+                    user.getEntranceYear(),
+                    user.getCollegeId(),
+                    user.getCreatedAt(),
+                    user.getUpdatedAt()
+            );
+        } catch (Exception e) {
+            throw new Exception(e.getMessage());
+        }
+    }
+
+    public boolean updatePassword(Long userId, String password) throws Exception {
+        try{
+            return userMapper.alterPassword(userId,password);
+        }catch (Exception e)
+        {
+            throw new Exception(e.getMessage());
+        }
+    }
+
+    public User getUserByName(String username) {
+        return null;
+    }
+
 }
